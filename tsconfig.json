@@ -2,13 +2,20 @@
   "compilerOptions": {
     "target": "es5",
     "module": "esnext",
-    "lib": ["es5", "dom"],
-    "jsx": "react",
+    "moduleResolution": "node",
     "declaration": false,
     "sourceMap": true,
-    "strict": true,
-    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "lib": ["es5", "dom", "es2015.promise"],
+    "typeRoots": ["./node_modules/@types", "./node_modules"],
+    "types": ["webpack-env"],
+    "outDir": "lib",
+    "rootDir": "src",
     "esModuleInterop": true,
-    "skipLibCheck": true
-  }
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules", "lib"]
 }
