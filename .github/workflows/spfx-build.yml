@@ -2,31 +2,43 @@ name: Build SPFx Package
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      # 1️⃣ Checkout source code
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Setup Node
+      # 2️⃣ Setup Node.js (MANDATORY for SPFx 1.18.x)
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: npm
 
-      - name: Install dependencies
-        run: npm install
+      # 3️⃣ Clean install (CRITICAL for SPFx)
+      - name: Clean install
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install --legacy-peer-deps
 
-      - name: Bundle
-        run: gulp bundle --ship
+      # 4️⃣ Bundle SPFx (production)
+      - name: Bundle SPFx
+        run: npx gulp bundle --ship
 
-      - name: Package
-        run: gulp package-solution --ship
+      # 5️⃣ Package SPFx solution
+      - name: Package SPFx solution
+        run: npx gulp package-solution --ship
 
-      - name: Upload package
+      # 6️⃣ Upload .sppkg artifact
+      - name: Upload SPFx package
         uses: actions/upload-artifact@v4
         with:
-          name: spfx-package
+          name: spfx-sppkg
           path: sharepoint/solution/*.sppkg
