@@ -3,7 +3,7 @@ import { spfi, SPFx } from "@pnp/sp";
 import "@pnp/sp/webs";
 import "@pnp/sp/lists";
 import "@pnp/sp/items";
-import * as $ from 'jquery';
+import $ from 'jquery';
 import styles from './ReleaseNotes.module.scss';
 
 interface IReleaseItem {
