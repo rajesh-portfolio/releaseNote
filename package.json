@@ -17,6 +17,7 @@
   "@microsoft/rush-stack-compiler-4.7": "*",
   "gulp": "^4.0.2",
   "eslint": "^8.57.0",
-  "@types/jquery": "^3.5.30"
+  "@types/jquery": "^3.5.30",
+  "@types/webpack-env": "^1.18.8"
 }
 }
