@@ -55,9 +55,10 @@ export default class ReleaseNotesWebPart extends BaseClientSideWebPart<IProps> {
         .join("");
     });
 
-    $(this.domElement).find('nav a').on('click', (e) => {
-      const targetId = $(e.currentTarget).data('target') as string;
-      document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
-    });
+   $(this.domElement).find('nav a').on('click', (e: JQuery.ClickEvent) => {
+  const targetId = $(e.currentTarget).data('target') as string;
+  document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
+});
+
   }
 }
