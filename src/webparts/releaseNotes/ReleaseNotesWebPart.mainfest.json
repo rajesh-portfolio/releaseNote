@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "22222222-2222-2222-2222-222222222222",
+  "alias": "ReleaseNotesWebPart",
+  "componentType": "WebPart",
+  "version": "1.0.0",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportedHosts": ["SharePointWebPart"],
+  "preconfiguredEntries": [{
+    "title": { "default": "Release Notes" },
+    "description": { "default": "Dynamic Release Notes" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "listName": "ReleaseNotesContent"
+    }
+  }]
+}

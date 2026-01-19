@@ -1,0 +1,9 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-extension-manifest.schema.json",
+  "id": "33333333-3333-3333-3333-333333333333",
+  "alias": "ReleaseNotesChrome",
+  "componentType": "Extension",
+  "extensionType": "ApplicationCustomizer",
+  "version": "1.0.0",
+  "manifestVersion": 2
+}

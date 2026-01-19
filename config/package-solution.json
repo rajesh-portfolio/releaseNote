@@ -1,0 +1,11 @@
+{
+  "solution": {
+    "name": "release-notes-app",
+    "id": "11111111-1111-1111-1111-111111111111",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true
+  },
+  "paths": {
+    "zippedPackage": "sharepoint/solution/release-notes-app.sppkg"
+  }
+}
